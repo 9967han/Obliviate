@@ -10,4 +10,6 @@
     <color name="ivory">#F4E9D9</color>
     <color name="colorDivision">#e0e0e0</color>
     <color name="textColor">#707070</color>
+    <color name="floatingButtonColor">#E5B9B9</color>
+
 </resources>
