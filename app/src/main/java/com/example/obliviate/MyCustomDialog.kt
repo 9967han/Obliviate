@@ -9,19 +9,20 @@ import android.util.Log
 import android.view.View
 import com.example.obliviate.databinding.CustomDialogBinding
 
-class MyCustomDialog(context: Context, myCustomDialogInterface: MyCustomDialogInterface, binding: CustomDialogBinding): Dialog(context), View.OnClickListener {
+class MyCustomDialog(context: Context, myCustomDialogInterface: MyCustomDialogInterface): Dialog(context), View.OnClickListener {
 
     private var myCustomDialogInterface: MyCustomDialogInterface? = null
-    private var binding: CustomDialogBinding? = null
+    private lateinit var binding: CustomDialogBinding
 
     init {
         this.myCustomDialogInterface = myCustomDialogInterface
-        this.binding = binding
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.custom_dialog)
+        binding = CustomDialogBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
         //배경 투명
         window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
@@ -30,10 +31,8 @@ class MyCustomDialog(context: Context, myCustomDialogInterface: MyCustomDialogIn
     }
 
     override fun onClick(view : View?) {
-        Log.d("로그", "2")
         when(view) {
             binding?.widgetRegister -> {
-                Log.d("로그", "2")
                 this.myCustomDialogInterface?.onRegisterBtnClicked()
             }
         }

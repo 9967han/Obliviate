@@ -18,11 +18,9 @@ import java.util.*
 class MainActivity : AppCompatActivity(), MyCustomDialogInterface {
     var db = FirebaseFirestore.getInstance()
     private lateinit var binding: ActivityMainBinding
-    private lateinit var customDialogBinding: CustomDialogBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        customDialogBinding = CustomDialogBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
         db.collection("Text")
@@ -44,7 +42,7 @@ class MainActivity : AppCompatActivity(), MyCustomDialogInterface {
     }
 
     fun onDialogBtnClicked(view: View){
-        val myCustomDialog = MyCustomDialog(this, this, customDialogBinding)
+        val myCustomDialog = MyCustomDialog(this, this)
         myCustomDialog.show()
     }
 
@@ -59,7 +57,6 @@ class MainActivity : AppCompatActivity(), MyCustomDialogInterface {
     }
 
     override fun onRegisterBtnClicked() {
-        Log.d("로그", "1")
         Toast.makeText(this, "CLICKED", Toast.LENGTH_SHORT).show()
     }
 }
