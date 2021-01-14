@@ -13,9 +13,10 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_margin="8dp"
-        android:text="@string/appwidget_text"
+        android:textAlignment="center"
+        android:text=""
         android:textColor="@color/textColor"
         android:fontFamily="@font/main_font"
         android:textSize="30sp"
-        android:textStyle="bold|italic" />
+        android:gravity="center_horizontal" />
 </RelativeLayout>
