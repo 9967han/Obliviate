@@ -26,13 +26,12 @@ class MyCustomDialog(context: Context, myCustomDialogInterface: MyCustomDialogIn
 
         //배경 투명
         window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        binding?.widgetRegister?.setOnClickListener(this)
-        binding?.widgetSize?.setOnClickListener(this)
+        binding?.dialogWidgetRegisterButton?.setOnClickListener(this)
     }
 
     override fun onClick(view : View?) {
         when(view) {
-            binding?.widgetRegister -> {
+            binding?.dialogWidgetRegisterButton -> {
                 this.myCustomDialogInterface?.onRegisterBtnClicked()
             }
         }

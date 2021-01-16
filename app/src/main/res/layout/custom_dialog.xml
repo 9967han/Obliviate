@@ -3,44 +3,114 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/ivory">
+    android:background="@drawable/dialog_shape">
 
     <LinearLayout
-        android:id="@+id/widget_division"
-        android:orientation="horizontal"
+        android:id="@+id/dialog_contents"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:background="@color/colorDivision">
+        android:layout_height="450dp">
+
+        <TextView
+            android:id="@+id/dialog_text"
+            android:text=""
+            android:fontFamily="@font/main_font"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginHorizontal="30dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:gravity="center"
+            android:layout_marginHorizontal="30dp">
+            <Button
+                android:backgroundTint="@color/ivory"
+                android:background="@drawable/button_shape"
+                android:layout_margin="10dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+            <Button
+                android:backgroundTint="@color/white"
+                android:background="@drawable/button_shape"
+                android:layout_margin="10dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+            <Button
+                android:backgroundTint="@color/textColor"
+                android:background="@drawable/button_shape"
+                android:layout_margin="10dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+            <Button
+                android:backgroundTint="@color/black"
+                android:background="@drawable/button_shape"
+                android:layout_margin="10dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:gravity="center"
+            android:layout_marginHorizontal="30dp">
+            <Button
+                android:layout_margin="10dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+            <Button
+                android:layout_margin="10dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+            <Button
+                android:layout_margin="10dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+            <Button
+                android:layout_margin="10dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+        </LinearLayout>
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center"
+        android:layout_marginHorizontal="30dp">
+        <Button
+            android:layout_margin="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
+        <Button
+            android:layout_margin="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
+        <Button
+            android:layout_margin="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
+        <Button
+            android:layout_margin="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
+        </LinearLayout>
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/widget_image"
-        android:layout_below="@id/widget_division"
-        android:layout_marginBottom="20dp"
-        android:src="@drawable/logo_image"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </ImageView>
 
     <LinearLayout
+        android:layout_marginBottom="30dp"
+        android:layout_below="@+id/dialog_contents"
+        android:id="@+id/dialog_button_layout"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/widget_image">
+        android:layout_height="50dp">
         <Button
-            android:id="@+id/widget_size"
-            android:layout_marginHorizontal="20dp"
-            android:layout_weight="1"
-            android:layout_width="0dp"
+            android:backgroundTint="@color/textColor"
+            android:background="@drawable/button_shape"
+            android:id="@+id/dialog_widget_register_button"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="나가기"/>
-
-        <Button
-            android:layout_weight="1"
-            android:id="@+id/widget_register"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_marginHorizontal="20dp"
+            android:layout_marginHorizontal="50dp"
+            android:textSize="24sp"
             android:text="위젯 등록" />
     </LinearLayout>
+
 </RelativeLayout>
