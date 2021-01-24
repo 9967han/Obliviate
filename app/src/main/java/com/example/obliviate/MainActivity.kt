@@ -6,12 +6,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.obliviate.databinding.ActivityMainBinding
-import com.example.obliviate.databinding.CustomDialogBinding
 import com.google.firebase.firestore.FirebaseFirestore
-import java.text.SimpleDateFormat
-import java.time.LocalDate
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 import java.util.*
 
 
@@ -42,7 +37,7 @@ class MainActivity : AppCompatActivity(), MyCustomDialogInterface {
     }
 
     fun onDialogBtnClicked(view: View){
-        val myCustomDialog = MyCustomDialog(this, this)
+        val myCustomDialog = MyCustomDialog(this, this, binding.mainTextview.text.toString())
         myCustomDialog.show()
     }
 

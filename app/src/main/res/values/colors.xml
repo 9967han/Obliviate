@@ -20,4 +20,14 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+    <color name="dialogColor1">#F4E9D9</color>
+    <color name="dialogColor2">#DE6991</color>
+    <color name="dialogColor3">#8E75C5</color>
+    <color name="dialogColor4">#7481F0</color>
+    <color name="dialogColor5">#6DC0F1</color>
+    <color name="dialogColor6">#84D089</color>
+    <color name="dialogColor7">#F48960</color>
+    <color name="dialogColor8">#9C877E</color>
+    <color name="dialogColor9">#FF000000</color>
+
 </resources>

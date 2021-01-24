@@ -9,24 +9,78 @@
         android:id="@+id/dialog_contents"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="550dp">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:gravity="center"
             android:fontFamily="@font/main_font"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
             android:layout_marginHorizontal="30dp">
-            <TextView
+            <com.example.obliviate.RoundedTextView
                 android:id="@+id/dialog_text"
                 android:layout_marginHorizontal="20dp"
-                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:text="TEST"
                 android:fontFamily="@font/main_font"
-                android:textSize="24sp"
-                android:background="@drawable/widget_shape"/>
+                android:text="TEST"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:background="@color/ivory"/>
+        </LinearLayout>
+        <TextView
+            android:layout_marginVertical="5dp"
+            android:id="@+id/widget_backgroundColor_change_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="55dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/main_font"
+            android:textSize="24sp"
+            android:text="배경색 변경"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:gravity="center"
+            android:layout_marginHorizontal="25dp">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/dialog_background_color_btn1"
+                android:backgroundTint="@color/dialogColor1"
+                android:background="@drawable/button_shape"
+                android:layout_margin="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/dialog_background_color_btn2"
+                android:backgroundTint="@color/dialogColor2"
+                android:background="@drawable/button_shape"
+                android:layout_margin="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/dialog_background_color_btn3"
+                android:backgroundTint="@color/dialogColor3"
+                android:background="@drawable/button_shape"
+                android:layout_margin="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/dialog_background_color_btn4"
+                android:backgroundTint="@color/dialogColor4"
+                android:background="@drawable/button_shape"
+                android:layout_margin="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/dialog_background_color_btn5"
+                android:backgroundTint="@color/dialogColor5"
+                android:background="@drawable/button_shape"
+                android:layout_margin="5dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,141 +88,132 @@
             android:gravity="center"
             android:layout_marginHorizontal="25dp">
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/dialog_color_btn1"
-                android:backgroundTint="#FEFE00"
+                android:id="@+id/dialog_background_color_btn6"
+                android:backgroundTint="@color/dialogColor6"
                 android:background="@drawable/button_shape"
                 android:layout_margin="5dp"
                 android:layout_width="40dp"
                 android:layout_height="40dp"/>
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/dialogColorBtn2"
-                android:backgroundTint="#FA9C00"
+                android:id="@+id/dialog_background_color_btn7"
+                android:backgroundTint="@color/dialogColor7"
                 android:background="@drawable/button_shape"
                 android:layout_margin="5dp"
                 android:layout_width="40dp"
                 android:layout_height="40dp"/>
             <androidx.appcompat.widget.AppCompatButton
-                android:backgroundTint="#ED3624"
+                android:id="@+id/dialog_background_color_btn8"
+                android:backgroundTint="@color/dialogColor8"
                 android:background="@drawable/button_shape"
                 android:layout_margin="5dp"
                 android:layout_width="40dp"
                 android:layout_height="40dp"/>
             <androidx.appcompat.widget.AppCompatButton
-                android:backgroundTint="#F505D4"
+                android:id="@+id/dialog_background_color_btn9"
+                android:backgroundTint="@color/dialogColor9"
                 android:background="@drawable/button_shape"
                 android:layout_margin="5dp"
                 android:layout_width="40dp"
                 android:layout_height="40dp"/>
             <androidx.appcompat.widget.AppCompatButton
-                android:backgroundTint="#A9FE17"
-                android:background="@drawable/button_shape"
-                android:layout_margin="5dp"
+                android:id="@+id/dialog_background_colorpicker_btn"
                 android:layout_width="40dp"
-                android:layout_height="40dp"/>
+                android:layout_height="40dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_shape"
+                android:backgroundTint="@color/brown_400"
+                android:text="+"
+                android:textSize="24sp" />
         </LinearLayout>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/widget_textColor_change_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="55dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/main_font"
+            android:textSize="24sp"
+            android:text="글자색 변경"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:gravity="center"
             android:layout_marginHorizontal="25dp">
             <androidx.appcompat.widget.AppCompatButton
-                android:backgroundTint="#60B946"
+                android:id="@+id/dialog_text_color_btn1"
+                android:backgroundTint="@color/dialogColor1"
                 android:background="@drawable/button_shape"
                 android:layout_margin="5dp"
                 android:layout_width="40dp"
                 android:layout_height="40dp"/>
             <androidx.appcompat.widget.AppCompatButton
-                android:backgroundTint="#A400C6"
+                android:id="@+id/dialog_text_color_btn2"
+                android:backgroundTint="@color/dialogColor2"
                 android:background="@drawable/button_shape"
                 android:layout_margin="5dp"
                 android:layout_width="40dp"
                 android:layout_height="40dp"/>
             <androidx.appcompat.widget.AppCompatButton
-                android:backgroundTint="#622D90"
+                android:id="@+id/dialog_text_color_btn3"
+                android:backgroundTint="@color/dialogColor3"
                 android:background="@drawable/button_shape"
                 android:layout_margin="5dp"
                 android:layout_width="40dp"
                 android:layout_height="40dp"/>
             <androidx.appcompat.widget.AppCompatButton
-                android:backgroundTint="#00733B"
+                android:id="@+id/dialog_text_color_btn4"
+                android:backgroundTint="@color/dialogColor4"
                 android:background="@drawable/button_shape"
                 android:layout_margin="5dp"
                 android:layout_width="40dp"
                 android:layout_height="40dp"/>
             <androidx.appcompat.widget.AppCompatButton
-                android:backgroundTint="#006FFE"
+                android:id="@+id/dialog_text_color_btn5"
+                android:backgroundTint="@color/dialogColor5"
                 android:background="@drawable/button_shape"
                 android:layout_margin="5dp"
                 android:layout_width="40dp"
                 android:layout_height="40dp"/>
         </LinearLayout>
-        <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:gravity="center"
-        android:layout_marginHorizontal="25dp">
-        <androidx.appcompat.widget.AppCompatButton
-            android:backgroundTint="#1749B2"
-            android:background="@drawable/button_shape"
-            android:layout_margin="5dp"
-            android:layout_width="40dp"
-            android:layout_height="40dp"/>
-        <androidx.appcompat.widget.AppCompatButton
-            android:backgroundTint="#120377"
-            android:background="@drawable/button_shape"
-            android:layout_margin="5dp"
-            android:layout_width="40dp"
-            android:layout_height="40dp"/>
-        <androidx.appcompat.widget.AppCompatButton
-            android:backgroundTint="#FEFEFE"
-            android:background="@drawable/button_shape"
-            android:layout_margin="5dp"
-            android:layout_width="40dp"
-            android:layout_height="40dp"/>
-        <androidx.appcompat.widget.AppCompatButton
-            android:backgroundTint="#959595"
-            android:background="@drawable/button_shape"
-            android:layout_margin="5dp"
-            android:layout_width="40dp"
-            android:layout_height="40dp"/>
-        <androidx.appcompat.widget.AppCompatButton
-            android:backgroundTint="@color/black"
-            android:background="@drawable/button_shape"
-            android:layout_margin="5dp"
-            android:layout_width="40dp"
-            android:layout_height="40dp"/>
-        </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:gravity="center"
             android:layout_marginHorizontal="25dp">
             <androidx.appcompat.widget.AppCompatButton
-                android:backgroundTint="#1749B2"
+                android:id="@+id/dialog_text_color_btn6"
+                android:backgroundTint="@color/dialogColor6"
                 android:background="@drawable/button_shape"
                 android:layout_margin="5dp"
                 android:layout_width="40dp"
                 android:layout_height="40dp"/>
             <androidx.appcompat.widget.AppCompatButton
-                android:backgroundTint="#120377"
+                android:id="@+id/dialog_text_color_btn7"
+                android:backgroundTint="@color/dialogColor7"
                 android:background="@drawable/button_shape"
                 android:layout_margin="5dp"
                 android:layout_width="40dp"
                 android:layout_height="40dp"/>
             <androidx.appcompat.widget.AppCompatButton
-                android:backgroundTint="#FEFEFE"
+                android:id="@+id/dialog_text_color_btn8"
+                android:backgroundTint="@color/dialogColor8"
                 android:background="@drawable/button_shape"
                 android:layout_margin="5dp"
                 android:layout_width="40dp"
                 android:layout_height="40dp"/>
             <androidx.appcompat.widget.AppCompatButton
-                android:backgroundTint="#959595"
+                android:id="@+id/dialog_text_color_btn9"
+                android:backgroundTint="@color/dialogColor9"
                 android:background="@drawable/button_shape"
                 android:layout_margin="5dp"
                 android:layout_width="40dp"
                 android:layout_height="40dp"/>
             <androidx.appcompat.widget.AppCompatButton
-                android:backgroundTint="@color/colorDivision"
+                android:id="@+id/dialog_text_colorpicker_btn"
+                android:backgroundTint="@color/brown_400"
                 android:background="@drawable/button_shape"
                 android:text="+"
                 android:textSize="24sp"
@@ -177,21 +222,29 @@
                 android:layout_height="40dp"/>
         </LinearLayout>
     </LinearLayout>
+
     <LinearLayout
-        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:layout_marginVertical="15dp"
         android:layout_below="@+id/dialog_contents"
         android:id="@+id/dialog_button_layout"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
-        <androidx.appcompat.widget.AppCompatButton
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="10dp">
+        <com.example.obliviate.RoundedTextView
+            android:clickable="true"
+            android:gravity="center"
+            android:textAlignment="center"
             android:backgroundTint="@color/textColor"
-            android:background="@drawable/button_shape"
+            android:background="@color/colorDivision"
             android:id="@+id/dialog_widget_register_button"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:layout_marginHorizontal="50dp"
-            android:textSize="24sp"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/main_font"
             android:text="위젯 등록" />
     </LinearLayout>
 
