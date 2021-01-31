@@ -120,8 +120,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_margin="5dp"
-                android:background="@drawable/button_shape"
-                android:backgroundTint="@color/brown_400"
+                android:background="@drawable/button_picker_shape"
                 android:text="+"
                 android:textSize="24sp" />
         </LinearLayout>
@@ -213,8 +212,7 @@
                 android:layout_height="40dp"/>
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/dialog_text_colorpicker_btn"
-                android:backgroundTint="@color/brown_400"
-                android:background="@drawable/button_shape"
+                android:background="@drawable/button_picker_shape"
                 android:text="+"
                 android:textSize="24sp"
                 android:layout_margin="5dp"

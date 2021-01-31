@@ -1,5 +1,6 @@
 package com.example.obliviate
 
+import android.R.attr.button
 import android.app.Dialog
 import android.content.Context
 import android.graphics.Color
@@ -7,6 +8,7 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import com.example.obliviate.databinding.CustomDialogBinding
 import com.github.dhaval2404.colorpicker.ColorPickerDialog
 import com.github.dhaval2404.colorpicker.model.ColorShape
@@ -14,7 +16,7 @@ import com.github.dhaval2404.colorpicker.util.ColorUtil.parseColor
 
 
 class MyCustomDialog(context: Context, myCustomDialogInterface: MyCustomDialogInterface, mainText: String): Dialog(
-    context
+        context
 ), View.OnClickListener {
 
     private var myCustomDialogInterface: MyCustomDialogInterface? = null
@@ -64,7 +66,13 @@ class MyCustomDialog(context: Context, myCustomDialogInterface: MyCustomDialogIn
     override fun onClick(view: View?) {
         when(view) {
             binding?.dialogWidgetRegisterButton -> {
-                this.myCustomDialogInterface?.onRegisterBtnClicked()
+                val backgroundColor = binding?.dialogText.background as ColorDrawable
+                val textColor = binding?.dialogText.currentTextColor
+                val hexBackgroundColor = String.format("#%06X", 0xFFFFFF and backgroundColor.color)
+                val hexTextColor = String.format("#%06X", 0xFFFFFF and textColor)
+//                Log.d("로그", hexBackgroundColor + "/" + hexTextColor)
+//                Toast.makeText(context, backgroundColor.color.toString(), Toast.LENGTH_SHORT).show()
+                this.myCustomDialogInterface?.onRegisterBtnClicked(hexBackgroundColor, hexTextColor)
             }
 
             binding?.dialogBackgroundColorBtn1 -> {
@@ -105,14 +113,14 @@ class MyCustomDialog(context: Context, myCustomDialogInterface: MyCustomDialogIn
 
             binding?.dialogBackgroundColorpickerBtn -> {
                 ColorPickerDialog
-                    .Builder(context)                        // Pass Activity Instance
-                    .setTitle("배경 색 설정")  // Default ColorShape.CIRCLE
-                    .setDefaultColor(parseColor("#ffffff"))                // Default "Choose Color"
-                    .setColorShape(ColorShape.CIRCLE)   // Default ColorShape.CIRCLE
-                    .setColorListener { color, colorHex ->
-                        binding?.dialogText?.setBackgroundColor(color)
-                    }
-                    .show()
+                        .Builder(context)                        // Pass Activity Instance
+                        .setTitle("배경 색 설정")  // Default ColorShape.CIRCLE
+                        .setDefaultColor(parseColor("#ffffff"))                // Default "Choose Color"
+                        .setColorShape(ColorShape.CIRCLE)   // Default ColorShape.CIRCLE
+                        .setColorListener { color, colorHex ->
+                            binding?.dialogText?.setBackgroundColor(color)
+                        }
+                        .show()
             }
 
 

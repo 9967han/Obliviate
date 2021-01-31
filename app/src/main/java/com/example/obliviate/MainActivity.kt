@@ -1,12 +1,17 @@
 package com.example.obliviate
 
+import android.appwidget.AppWidgetManager
+import android.content.Intent
+import android.graphics.Color.parseColor
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.RemoteViews
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.obliviate.databinding.ActivityMainBinding
 import com.google.firebase.firestore.FirebaseFirestore
+import java.lang.Integer.parseInt
 import java.util.*
 
 
@@ -51,7 +56,25 @@ class MainActivity : AppCompatActivity(), MyCustomDialogInterface {
         return day
     }
 
-    override fun onRegisterBtnClicked() {
-        Toast.makeText(this, "CLICKED", Toast.LENGTH_SHORT).show()
+    override fun onRegisterBtnClicked(backgroundColor: String, textColor:String) {
+        val widgetIntent = Intent(this, NewAppWidget::class.java)
+        widgetIntent.putExtra("backgroundColor", backgroundColor)
+        widgetIntent.putExtra("textColor", textColor)
+        widgetIntent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE)
+        this.sendBroadcast(widgetIntent) // 브로드캐스팅
+
+//        val appWidgetId = intent?.extras?.getInt(
+//                AppWidgetManager.EXTRA_APPWIDGET_ID,
+//                AppWidgetManager.INVALID_APPWIDGET_ID
+//        ) ?: AppWidgetManager.INVALID_APPWIDGET_ID
+//
+//        val views = RemoteViews(this.packageName, R.layout.new_app_widget)
+//        views.setTextColor(R.id.appwidget_text, parseColor("#000000"))
+//        val appWidgetManager: AppWidgetManager = AppWidgetManager.getInstance(this)
+//        appWidgetManager.updateAppWidget(appWidgetId, views)
+
+        //Toast.makeText(this, "CLICKED", Toast.LENGTH_SHORT).show()
+
     }
+
 }
