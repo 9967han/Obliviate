@@ -38,12 +38,14 @@ class MainActivity : AppCompatActivity(), MyCustomDialogInterface {
                     Log.d("error", "Error getting documents.", task.exception)
                 }
             }
-
     }
 
     fun onDialogBtnClicked(view: View){
-        val myCustomDialog = MyCustomDialog(this, this, binding.mainTextview.text.toString())
-        myCustomDialog.show()
+        val mainText = binding.mainTextview.text.toString()
+        if(mainText != ""){
+            val myCustomDialog = MyCustomDialog(this, this, binding.mainTextview.text.toString())
+            myCustomDialog.show()
+        }
     }
 
     private fun unescape(description: String): String? {
@@ -62,19 +64,6 @@ class MainActivity : AppCompatActivity(), MyCustomDialogInterface {
         widgetIntent.putExtra("textColor", textColor)
         widgetIntent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE)
         this.sendBroadcast(widgetIntent) // 브로드캐스팅
-
-//        val appWidgetId = intent?.extras?.getInt(
-//                AppWidgetManager.EXTRA_APPWIDGET_ID,
-//                AppWidgetManager.INVALID_APPWIDGET_ID
-//        ) ?: AppWidgetManager.INVALID_APPWIDGET_ID
-//
-//        val views = RemoteViews(this.packageName, R.layout.new_app_widget)
-//        views.setTextColor(R.id.appwidget_text, parseColor("#000000"))
-//        val appWidgetManager: AppWidgetManager = AppWidgetManager.getInstance(this)
-//        appWidgetManager.updateAppWidget(appWidgetId, views)
-
-        //Toast.makeText(this, "CLICKED", Toast.LENGTH_SHORT).show()
-
     }
 
 }

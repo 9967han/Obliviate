@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="ivory">#F4E9D9</color>
+    <color name="mixivory">#FAF4EC</color>
     <color name="colorDivision">#e0e0e0</color>
     <color name="textColor">#707070</color>
     <color name="floatingButtonColor">#E5B9B9</color>

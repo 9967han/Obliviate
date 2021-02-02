@@ -1,6 +1,7 @@
 package com.example.obliviate
 
-import android.R.attr.button
+//import com.skydoves.colorpickerview.ColorPickerDialog
+import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Context
 import android.graphics.Color
@@ -8,7 +9,6 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import com.example.obliviate.databinding.CustomDialogBinding
 import com.github.dhaval2404.colorpicker.ColorPickerDialog
 import com.github.dhaval2404.colorpicker.model.ColorShape
@@ -28,9 +28,20 @@ class MyCustomDialog(context: Context, myCustomDialogInterface: MyCustomDialogIn
         this.mainText = mainText
     }
 
+    @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        var customDialogBackgrondColor = PreferenceManager.getString(context, "customDialogBackgrondColor")
+        var customDialogTextColor = PreferenceManager.getString(context, "customDialogTextColor")
+        if (customDialogBackgrondColor == "") {
+            customDialogBackgrondColor = context.getResources().getString(R.color.ivory);
+        }
+        if (customDialogTextColor == "") {
+            customDialogTextColor = context.getResources().getString(R.color.textColor);
+        }
         binding = CustomDialogBinding.inflate(layoutInflater)
+        binding?.dialogText.setBackgroundColor(parseColor(customDialogBackgrondColor))
+        binding?.dialogText.setTextColor(parseColor(customDialogTextColor))
         val view = binding.root
         setContentView(view)
 
@@ -70,9 +81,9 @@ class MyCustomDialog(context: Context, myCustomDialogInterface: MyCustomDialogIn
                 val textColor = binding?.dialogText.currentTextColor
                 val hexBackgroundColor = String.format("#%06X", 0xFFFFFF and backgroundColor.color)
                 val hexTextColor = String.format("#%06X", 0xFFFFFF and textColor)
-//                Log.d("로그", hexBackgroundColor + "/" + hexTextColor)
-//                Toast.makeText(context, backgroundColor.color.toString(), Toast.LENGTH_SHORT).show()
                 this.myCustomDialogInterface?.onRegisterBtnClicked(hexBackgroundColor, hexTextColor)
+                PreferenceManager.setString(context, "customDialogBackgrondColor", hexBackgroundColor)
+                PreferenceManager.setString(context, "customDialogTextColor", hexTextColor)
             }
 
             binding?.dialogBackgroundColorBtn1 -> {
@@ -112,6 +123,7 @@ class MyCustomDialog(context: Context, myCustomDialogInterface: MyCustomDialogIn
             }
 
             binding?.dialogBackgroundColorpickerBtn -> {
+
                 ColorPickerDialog
                         .Builder(context)                        // Pass Activity Instance
                         .setTitle("배경 색 설정")  // Default ColorShape.CIRCLE

@@ -2,4 +2,5 @@
     <string name="app_name">Obliviate</string>
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
+    <string name="cancel">나가기</string>
 </resources>
