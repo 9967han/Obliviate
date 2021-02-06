@@ -1,9 +1,9 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/appwidget_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/widget_shape"
-    android:padding="@dimen/widget_margin"
+    android:background="@color/ivory"
     android:theme="@style/ThemeOverlay.Obliviate.AppWidgetContainer">
 
     <TextView
@@ -13,10 +13,9 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_margin="8dp"
-        android:textAlignment="center"
         android:text=""
         android:textColor="@color/textColor"
         android:fontFamily="@font/main_font"
         android:textSize="30sp"
-        android:gravity="center_horizontal" />
+        android:gravity="center_vertical" />
 </RelativeLayout>
