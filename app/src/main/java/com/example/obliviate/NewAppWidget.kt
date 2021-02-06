@@ -1,5 +1,6 @@
 package com.example.obliviate
 
+import android.annotation.SuppressLint
 import android.app.AlarmManager
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
@@ -56,9 +57,10 @@ class NewAppWidget : AppWidgetProvider() {
     }
 
     //위젯이 최초로 설치되는 순간 호출되는 함수
+    @SuppressLint("ResourceType")
     override fun onEnabled(context: Context) {
         // Enter relevant functionality for when the first widget is created
-        Toast.makeText(context, "onEnabled", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(context, "onEnabled", Toast.LENGTH_SHORT).show()
         val views = RemoteViews(context.packageName, R.layout.new_app_widget)
         var customDialogBackgrondColor = PreferenceManager.getString(context, "customDialogBackgrondColor")
         var customDialogTextColor = PreferenceManager.getString(context, "customDialogTextColor")
