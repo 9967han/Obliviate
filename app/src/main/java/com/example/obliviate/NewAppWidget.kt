@@ -11,6 +11,8 @@ import android.graphics.Color.parseColor
 import android.util.Log
 import android.widget.RemoteViews
 import android.widget.Toast
+import com.example.obliviate.databinding.CustomDialogBinding
+import com.github.dhaval2404.colorpicker.util.ColorUtil
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.*
 
@@ -56,7 +58,21 @@ class NewAppWidget : AppWidgetProvider() {
     //위젯이 최초로 설치되는 순간 호출되는 함수
     override fun onEnabled(context: Context) {
         // Enter relevant functionality for when the first widget is created
-        //Toast.makeText(context, "onEnabled", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "onEnabled", Toast.LENGTH_SHORT).show()
+        val views = RemoteViews(context.packageName, R.layout.new_app_widget)
+        var customDialogBackgrondColor = PreferenceManager.getString(context, "customDialogBackgrondColor")
+        var customDialogTextColor = PreferenceManager.getString(context, "customDialogTextColor")
+        if (customDialogBackgrondColor == "") {
+            customDialogBackgrondColor = context.getResources().getString(R.color.ivory);
+        }
+        if (customDialogTextColor == "") {
+            customDialogTextColor = context.getResources().getString(R.color.textColor);
+        }
+        views.setInt(R.id.appwidget_layout, "setBackgroundColor", parseColor(customDialogBackgrondColor))
+        views.setTextColor(R.id.appwidget_text, parseColor(customDialogTextColor))
+        val appWidgetManager = AppWidgetManager.getInstance(context)
+        val componentName = ComponentName(context!!, NewAppWidget::class.java)
+        appWidgetManager.updateAppWidget(componentName, views)
     }
 
     //위젯이 마지막으로 제거되는 순간 호출되는 함수
