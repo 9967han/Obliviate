@@ -49,6 +49,7 @@ class MyCustomDialog(context: Context, myCustomDialogInterface: MyCustomDialogIn
         binding?.dialogText.setText(this.mainText)
         window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         binding?.dialogWidgetRegisterButton?.setOnClickListener(this)
+        binding?.dialogWidgetCancelButton?.setOnClickListener(this)
 
         binding?.dialogBackgroundColorBtn1?.setOnClickListener(this)
         binding?.dialogBackgroundColorBtn2?.setOnClickListener(this)
@@ -84,6 +85,10 @@ class MyCustomDialog(context: Context, myCustomDialogInterface: MyCustomDialogIn
                 this.myCustomDialogInterface?.onRegisterBtnClicked(hexBackgroundColor, hexTextColor)
                 PreferenceManager.setString(context, "customDialogBackgrondColor", hexBackgroundColor)
                 PreferenceManager.setString(context, "customDialogTextColor", hexTextColor)
+                this.dismiss()
+            }
+            binding?.dialogWidgetCancelButton -> {
+                this.cancel()
             }
 
             binding?.dialogBackgroundColorBtn1 -> {
@@ -123,7 +128,6 @@ class MyCustomDialog(context: Context, myCustomDialogInterface: MyCustomDialogIn
             }
 
             binding?.dialogBackgroundColorpickerBtn -> {
-
                 ColorPickerDialog
                         .Builder(context)                        // Pass Activity Instance
                         .setTitle("배경 색 설정")  // Default ColorShape.CIRCLE

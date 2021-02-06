@@ -40,9 +40,9 @@
         android:layout_height="match_parent"
         android:text=""
         android:fontFamily="@font/main_font"
-        android:textSize="36sp"
+        android:textSize="33sp"
         android:paddingTop="150dp"
-        android:layout_marginHorizontal="35dp">
+        android:layout_marginHorizontal="25dp">
     </TextView>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floating_button"
